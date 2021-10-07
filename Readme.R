@@ -1,7 +1,7 @@
-EGER1 <- read.csv("EasyLog/EGER1302.txt", skip = 1, head = FALSE)
-EGER2 <- read.csv("EasyLog/EGER2302.txt", skip = 1, head = FALSE)
-HAZ1 <- read.csv("EasyLog/HAZ1302.txt", skip = 1, head = FALSE)
-HAZ2 <- read.csv("EasyLog/HAZ2302.txt", skip = 1, head = FALSE)
+EGER1 <- read.csv("../hom_para_NCS/EGER1302.txt", skip = 1, head = FALSE)
+EGER2 <- read.csv("../hom_para_NCS/EGER2302.txt", skip = 1, head = FALSE)
+HAZ1 <- read.csv("../hom_para_NCS/HAZ1302.txt", skip = 1, head = FALSE)
+HAZ2 <- read.csv("../hom_para_NCS/HAZ2302.txt", skip = 1, head = FALSE)
 
 library(xts)
 ttime <- as.POSIXct(EGER1[,2])
