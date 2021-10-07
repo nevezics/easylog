@@ -1,5 +1,10 @@
-EGER1 <- read.csv("../hom_para_NCS/EGER1302.txt", skip = 1, head = FALSE)
+placename  <- "EGER1"
+
+
+filename <- paste0("../hom_para_NCS/", placename, "302.txt")
+EGER1 <- read.csv(filename, skip = 1, head = FALSE)
 EGER2 <- read.csv("../hom_para_NCS/EGER2302.txt", skip = 1, head = FALSE)
+
 HAZ1 <- read.csv("../hom_para_NCS/HAZ1302.txt", skip = 1, head = FALSE)
 HAZ2 <- read.csv("../hom_para_NCS/HAZ2302.txt", skip = 1, head = FALSE)
 
