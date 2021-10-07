@@ -1,9 +1,10 @@
 placename  <- "EGER1"
-
+placename  <- "EGER2"
 
 filename <- dir("../hom_para_NCS", placename)
-for(aktfile in filename) {
-    EGER1 <- rbind(EGER1, read.csv(paste0("../hom_para_NCS/", aktfile), skip = 1, head = FALSE))
+assign(placename, read.csv(paste0("../hom_para_NCS/", filename[1]), skip = 1, head = FALSE))
+for(aktfile in filename[-1]) {
+    assign(placename, rbind(get(placename), read.csv(paste0("../hom_para_NCS/", aktfile), skip = 1, head = FALSE)))
 }
 
 EGER2 <- read.csv("../hom_para_NCS/EGER2302.txt", skip = 1, head = FALSE)
