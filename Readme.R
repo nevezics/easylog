@@ -1,6 +1,7 @@
 placename  <- "EGER1"
 placename  <- "EGER2"
 placename  <- "HAZ1"
+placename  <- "HAZ2"
 
 filename <- dir("../hom_para_NCS", placename)
 assign(placename, read.csv(paste0("../hom_para_NCS/", filename[1]), skip = 1, head = FALSE))
@@ -36,3 +37,11 @@ EGER.xts <- c(EGER1.xts, EGER2.xts)
 plot.zoo(EGER.xts[,1])
 
 write.zoo(EGER1.xts, "EGER1.csv")
+
+head(EGER1.xts[1] - EGER2.xts[1])
+
+EGER1napi.xts <- apply.daily(EGER1.xts, mean)
+
+EGER2napi.xts <- apply.daily(EGER2.xts, mean)
+HAZ2napi.xts <- apply.daily(HAZ2.xts, mean)
+plot(HAZ2napi.xts[,1]-EGER2napi.xts[,1])
