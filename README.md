@@ -1,2 +1,2 @@
 # easylog
-loggerdataprocessing
+Logger-data processing with R.
