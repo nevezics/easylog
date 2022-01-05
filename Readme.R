@@ -54,4 +54,11 @@ plot(HAZ2napi.xts[,1]-EGER2napi.xts[,1])
 summary(ESZEGELY2.xts)
 ESZEGELY2napi.xts <- apply.daily(ESZEGELY2.xts, mean)
 plot(ESZEGELY2napi.xts[,1]-EGER2napi.xts["2021-06-25/",1])
+plot(EGER2napi.xts)
+plot(ESZEGELY2napi.xts)
+plot(EGER2napi.xts[,2]-ESZEGELY2napi.xts[,2])
+plot(HAZ2napi.xts)
+plot(EGER2napi.xts[,1]-HAZ2napi.xts[,1])
 
+
+plot.zoo(EGER2.xts[,2])
