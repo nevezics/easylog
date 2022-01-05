@@ -61,4 +61,20 @@ plot(HAZ2napi.xts)
 plot(EGER2napi.xts[,1]-HAZ2napi.xts[,1])
 
 
+
 plot.zoo(EGER2.xts[,2])
+
+## Higher resolution in time? Cross-correlation?
+plot(ESZEGELY2.xts['2021-07-01/2021-07-10',1] - EGER2.xts['2021-07-01/2021-07-10',1])
+
+timewin <- '2021-07-01/2021-07-10'
+jpeg("TempCompare.jpg", width = 9.5, height = 9, units = "cm", res = 300, pointsize = 10)
+plot(cbind(HAZ2.xts[timewin,1], ESZEGELY2.xts[timewin,1],EGER2.xts[timewin,1]), main = "")
+addLegend("topleft", on=1, legend.names = c("Szabad terület", "Szegély", "Állomány"), col = 1:3, lwd = 2)
+dev.off()
+
+jpeg("HumidCompare.jpg", width = 9.5, height = 9, units = "cm", res = 300, pointsize = 10)
+plot(cbind(HAZ2.xts[timewin,2], ESZEGELY2.xts[timewin,2],EGER2.xts[timewin,2]), main = "", ylim = c(35,109))
+addLegend("topleft", on=1, legend.names = c("Szabad terület", "Szegély", "Állomány"), col = 1:3, lwd = 2)
+dev.off()
+
