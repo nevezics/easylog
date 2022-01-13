@@ -2,7 +2,12 @@ placename  <- "EGER1"
 placename  <- "EGER2"
 placename  <- "HAZ1"
 placename  <- "HAZ2"
+placename <- "ESZEGELY1"
 placename <- "ESZEGELY2"
+Placename <- "BUKKOS1"
+placename <- "BUKKOS2"
+placename <- "KTT1"
+placename <- "KTT2"
 
 filename <- dir("../hom_para_NCS", placename)
 assign(placename, read.csv(paste0("../hom_para_NCS/", filename[1]), skip = 1, head = FALSE))
@@ -38,7 +43,7 @@ lines(as.zoo(HAZ1.xts[,2]), col = 3)
 lines(as.zoo(HAZ2.xts[,2]), col = 4)
 
 ## MÉrőhelyenként
-EGER.xts <- c(EGER1.xts, EGER2.xts)
+EGER.xts <- (EGER1.xts, EGER2.xts)
 plot.zoo(EGER.xts[,1])
 
 write.zoo(EGER1.xts, "EGER1.csv")
