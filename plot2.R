@@ -19,8 +19,8 @@ plot (ESZEGELY1napi.xts [,1], col=2)
 lines (ESZEGELY2napi.xts [,1], col=1)
 plot (ESZEGELY2napi.xts [,1], col=2)
 
-plot (BUKKOS2napi.xts [,1], col=2)
-lines (ESZEGELY2napi.xts [,1], col=1)
+plot.zoo (HAZ2napi.xts ['2021-06/2022-01',1], col=2)
+lines (as.zoo(ESZEGELY2napi.xts [,1]), col=1)
 
 ## pdfbe
 pdf("haz2eger2.pdf", width=21)
@@ -42,3 +42,7 @@ plot (HAZ2.xts['2021-06-07/2021-06-14',1],col=2)
 lines (EGER2.xts[,1],col=1)
 dev.off()
 
+png("haz2egersz2.png", width=3*480)
+plot (HAZ2.xts['2021-06/2022-01',1],col=2)
+lines (ESZEGELY2.xts[,1],col=1)
+dev.off()
