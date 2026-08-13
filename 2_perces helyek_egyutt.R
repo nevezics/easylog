@@ -55,7 +55,9 @@ plot.zoo (monthlyprec.xts,
           ylab = "",
           ylim = c(310,0),
           type = "h",
-          col = "blue")
+          col = "blue",
+          lwd = 3,
+          lend = "butt")
 axis(4)
 mtext("Precipitation [mm]", side = 4, line = 2.5)
 #Havi pára
