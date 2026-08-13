@@ -34,14 +34,30 @@ plot.zoo (HAZ2napi.xts [,2],
 lines (as.zoo (ESZEGELY2napi.xts [,2]), col="blue2", lwd=1.8)
 lines (as.zoo (EGER2napi.xts [,2]), col="cyan", lwd=1.8)
 #Havi hőmérséklet
+par(xaxs = "i", yaxs = "i", mar = c(5.1, 4.1, 4.1, 4.1))
+xhatar <- as.POSIXct(c("2021-01-01", "2026-01-01"))
 plot.zoo (HAZ2havi.xts [,1],
           main="Cumulative monthly temperature data",
           xlab="Years",
-          ylab="°C",
+          xlim = c(xhatar[1],xhatar[2]),
+          ylab="Temperature [°C]",
+          ylim = c(-1,30),
           col="darkred",
           lwd=2.5)
 lines (as.zoo (ESZEGELY2havi.xts [,1]), col="red2", lwd=2.5)
 lines (as.zoo (EGER2havi.xts [,1]), col="tomato", lwd=2.5)
+par( new = TRUE, mar = c(5.1, 4.1, 4.1, 4.1))
+plot.zoo (monthlyprec.xts,
+          xlim = c(xhatar[1],xhatar[2]),
+          xaxt = "n",
+          yaxt = "n",
+          xlab = "",
+          ylab = "",
+          ylim = c(310,0),
+          type = "h",
+          col = "blue")
+axis(4)
+mtext("Precipitation [mm]", side = 4, line = 2.5)
 #Havi pára
 plot.zoo (HAZ2havi.xts [,2],
           main="Cumulative monthly humidity data",
