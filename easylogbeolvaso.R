@@ -67,7 +67,7 @@ write.zoo (HAZ1havi.xts [,2], "HAZ1havipara.csv",sep=";",dec=",")
 ##HAZ2(2perces; hom[,1]; para[,2])
 ttime <- as.POSIXct(HAZ2[,2])
 HAZ2.xts <- xts(HAZ2[,3:5], ttime)
-l#Órás hőmérséklet
+#Órás hőmérséklet
 hourly.temp <- endpoints(HAZ2.xts[,1],"hours")
 HAZ2orashom.xts <- period.apply(HAZ2.xts[,1], hourly.temp, mean)
 #Órás pára
