@@ -1,10 +1,11 @@
 #Különböző mérőhelyek együtt (2 percesek)
 #Órás hőmérséklet
+Sys.setlocale(locale = "C")
 par(xaxs = "i", yaxs = "i", mar = c(5.1, 4.1, 4.1, 4.1))
 xhatar <- as.POSIXct(c("2021-02-01", "2025-12-31"))
 plot.zoo (HAZ2orashom.xts,
           main="Cumulative hourly temperature data",
-          xlab="Years",
+          xlab="Months",
           xlim = c(xhatar[1],xhatar[2]),
           ylab=" Temperature [°C]",
           ylim = c(-10,30),
@@ -16,7 +17,7 @@ par(xaxs = "i", yaxs = "i", mar = c(5.1, 4.1, 4.1, 4.1))
 xhatar <- as.POSIXct(c("2021-02-01", "2025-12-31"))
 plot.zoo (HAZ2oraspara.xts,
           main="Cumulative hourly humidity data",
-          xlab="Years",
+          xlab="Months",
           xlim = c(xhatar[1],xhatar[2]),
           ylab="Humidity [%]",
           ylim = c(30,105),
@@ -28,7 +29,7 @@ par(xaxs = "i", yaxs = "i", mar = c(5.1, 4.1, 4.1, 4.1))
 xhatar <- as.POSIXct(c("2021-02-01", "2025-12-31"))
 plot.zoo (HAZ2napi.xts [,1],
           main="Cumulative daily temperature data",
-          xlab="Years",
+          xlab="Months",
           xlim = c(xhatar[1],xhatar[2]),
           ylab="Temperature [°C]",
           ylim = c(-10,30),
@@ -41,7 +42,7 @@ par(xaxs = "i", yaxs = "i", mar = c(5.1, 4.1, 4.1, 4.1))
 xhatar <- as.POSIXct(c("2021-02-01", "2025-12-31"))
 plot.zoo (HAZ2napi.xts [,2],
           main="Cumulative daily humidity data",
-          xlab="Years",
+          xlab="Months",
           xlim = c(xhatar[1],xhatar[2]),
           ylab="%",
           ylim = c(30,105),
